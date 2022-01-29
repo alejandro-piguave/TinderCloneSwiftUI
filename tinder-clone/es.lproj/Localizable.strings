@@ -1,0 +1,52 @@
+/* 
+  Localizable.strings
+  tinder-clone
+
+  Created by Alejandro Piguave on 18/1/22.
+  
+*/
+"edit-profile" = "Editar Perfil";
+"create-profile" = "Crear Perfil";
+"submit" = "Submit";
+"personal-info" = "Información personal";
+"about-you" = "Sobre mí";
+"gender" = "Género";
+"name" = "Nombre";
+"birthdate" = "Fecha de nacimiento";
+"enter-your-name" = "Introduce tu nombre";
+"pick-your-birthday" = "Fecha de nacimiento";
+"i-am-interested-in" = "Me interesan";
+"man" = "Hombre";
+"woman" = "Mujer";
+"men" = "Hombres";
+"women" = "Mujeres";
+"both" = "Ambos";
+"submit" = "Enviar";
+"sign-out-confirmation" = "¿Estás seguro/a de que quieres cerrar sesión?";
+"yes" = "Sí";
+"cancel" = "Cancelar";
+"upload-error" = "Error al subir";
+"done" = "Hecho";
+"error-uploading-profile" = "Ha habido un error al subir tu perfil. Por favor inténtalo de nuevo más tarde.";
+"remove-confirmation" = "¿Eliminar esta foto?";
+"sign-out" = "Cerrar sesión";
+"create-new" = "Crear nuevo";
+"select-content-type" = "Selecciona el tipo de contenido";
+"upload" = "Subir";
+"photo" = "Foto";
+"capture-from" = "Capturar desde";
+"camera" = "Cámara";
+"pic-delete-error" = "Error al eliminar";
+"pic-delete-error-msg" = "Debes tener al menos 2 fotos en tu perfil.";
+"no-more-profiles" = "No hay más perfiles. 😢";
+"its-a-match-text" = "%@ y tú os habéis gustado.";
+"messages" = "Mensajes";
+"send-message" = "Enviar mensaje";
+"keep-swiping" = "Continuar";
+"no-matches-yet" = "Todavía no tienes ningún match.";
+"send-message-placeholder" = "Envía un mensaje";
+"send-message" = "Enviar";
+"camera-permission-denied" = "Permiso rechazado";
+"user-must-grant-camera-permission" = "El acceso a la cámara del dispositivo es necesario para utilizar esta funcionalidad.";
+ 
+

@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  tinder-clone
+
+  Created by Alejandro Piguave on 18/1/22.
+  
+*/
+"edit-profile" = "Edit Profile";
+"create-profile" = "Create Profile";
+"submit" = "Submit";
+"personal-info" = "Personal information";
+"about-you" = "About you";
+"gender" = "Gender";
+"name" = "Name";
+"birthdate" = "Birthdate";
+"enter-your-name" = "Enter your name";
+"pick-your-birthday" = "Pick your birthdate";
+"i-am-interested-in" = "I am interested in";
+"man" = "Man";
+"woman" = "Woman";
+"men" = "Men";
+"women" = "Women";
+"both" = "Both";
+"submit" = "Submit";
+"sign-out-confirmation" = "Are you sure you want to sign out?";
+"yes" = "Yes";
+"cancel" = "Cancel";
+"upload-error" = "Upload Error";
+"done" = "Done";
+"error-uploading-profile" = "There was an error while trying to upload your profile. Please, try again later";
+"remove-confirmation" = "Remove this picture?";
+"sign-out" = "Sign Out";
+"create-new" = "Create new";
+"select-content-type" = "Select a content type";
+"upload" = "Upload";
+"photo" = "Photo";
+"capture-from" = "Capture from";
+"camera" = "Camera";
+"pic-delete-error" = "Delete error";
+"pic-delete-error-msg" = "You must have at least two pictures in your profile.";
+"no-more-profiles" = "No more profiles. 😢";
+"its-a-match-text" = "You and %@ have liked each other.";
+"messages" = "Messages";
+"send-message" = "Send message";
+"keep-swiping" = "Keep swiping";
+ "no-matches-yet" = "You have no matches yet.";
+"send-message-placeholder" = "Send a message";
+"send-message" = "Send";
+"camera-permission-denied" = "Camera permission denied";
+"user-must-grant-camera-permission" = "Camera access is required to use this feature.";

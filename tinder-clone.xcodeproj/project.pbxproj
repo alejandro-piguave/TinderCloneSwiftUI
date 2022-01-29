@@ -1,0 +1,997 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F08993A2780939A00A3BE95 /* tinder_cloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0899392780939A00A3BE95 /* tinder_cloneApp.swift */; };
+		4F08993C2780939A00A3BE95 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08993B2780939A00A3BE95 /* ContentView.swift */; };
+		4F08993E2780939B00A3BE95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F08993D2780939B00A3BE95 /* Assets.xcassets */; };
+		4F0899412780939B00A3BE95 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F0899402780939B00A3BE95 /* Preview Assets.xcassets */; };
+		4F08994B2780939B00A3BE95 /* tinder_cloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08994A2780939B00A3BE95 /* tinder_cloneTests.swift */; };
+		4F0899552780939B00A3BE95 /* tinder_cloneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0899542780939B00A3BE95 /* tinder_cloneUITests.swift */; };
+		4F0899572780939B00A3BE95 /* tinder_cloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0899562780939B00A3BE95 /* tinder_cloneUITestsLaunchTests.swift */; };
+		4F089966278093E200A3BE95 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F089963278093E200A3BE95 /* AuthViewModel.swift */; };
+		4F089967278093E200A3BE95 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F089964278093E200A3BE95 /* HomeView.swift */; };
+		4F089968278093E200A3BE95 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F089965278093E200A3BE95 /* LoginView.swift */; };
+		4F08996D278094E600A3BE95 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 4F08996C278094E600A3BE95 /* FirebaseAuth */; };
+		4F08996F278094E600A3BE95 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 4F08996E278094E600A3BE95 /* FirebaseFirestore */; };
+		4F089971278094E600A3BE95 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F089970278094E600A3BE95 /* FirebaseStorage */; };
+		4F089974278095B300A3BE95 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 4F089973278095B300A3BE95 /* GoogleSignIn */; };
+		4F0899792780B53900A3BE95 /* GradientOutlineButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0899782780B53900A3BE95 /* GradientOutlineButton.swift */; };
+		4F08997B2780B9AC00A3BE95 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08997A2780B9AC00A3BE95 /* Extensions.swift */; };
+		4F08997D2780E16E00A3BE95 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08997C2780E16D00A3BE95 /* SwipeView.swift */; };
+		4F08997F2780E34900A3BE95 /* SwipeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F08997E2780E34900A3BE95 /* SwipeCardView.swift */; };
+		4F0899832780F0B400A3BE95 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0899822780F0B400A3BE95 /* AppColor.swift */; };
+		4F0899852781007900A3BE95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0899842781007900A3BE95 /* GoogleService-Info.plist */; };
+		4F0C781627A5882500F0B371 /* CameraService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C781527A5882500F0B371 /* CameraService.swift */; };
+		4F0C781827A5882B00F0B371 /* CameraPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0C781727A5882B00F0B371 /* CameraPreview.swift */; };
+		4F190D8E279DD8BB00393CE8 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F190D8D279DD8BB00393CE8 /* MatchView.swift */; };
+		4F31453D2782284C008D5D4A /* SwipeableCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31453C2782284C008D5D4A /* SwipeableCardView.swift */; };
+		4F31453F278258FD008D5D4A /* EditProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31453E278258FD008D5D4A /* EditProfileView.swift */; };
+		4F31454127825B38008D5D4A /* MatchListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31454027825B38008D5D4A /* MatchListView.swift */; };
+		4F3145432782618E008D5D4A /* CreateProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F3145422782618E008D5D4A /* CreateProfileView.swift */; };
+		4F31454527826E47008D5D4A /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31454427826E47008D5D4A /* LoadingView.swift */; };
+		4F31454727830F2D008D5D4A /* AddImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31454627830F2D008D5D4A /* AddImageView.swift */; };
+		4F31454B27832448008D5D4A /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31454A27832448008D5D4A /* ImagePicker.swift */; };
+		4F31454D27835D56008D5D4A /* ContentTypeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31454C27835D56008D5D4A /* ContentTypeView.swift */; };
+		4F31454F2783721A008D5D4A /* AddedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31454E2783721A008D5D4A /* AddedImageView.swift */; };
+		4F31455127837AB5008D5D4A /* FirestoreUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F31455027837AB5008D5D4A /* FirestoreUser.swift */; };
+		4F31455427837E5C008D5D4A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */; };
+		4F314556278499ED008D5D4A /* PictureGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F314555278499ED008D5D4A /* PictureGridView.swift */; };
+		4F9EB9A4279023A100B9F31C /* DropOutsideDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9EB9A3279023A100B9F31C /* DropOutsideDelegate.swift */; };
+		4F9EB9A627903CF300B9F31C /* ProfileForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9EB9A527903CF300B9F31C /* ProfileForm.swift */; };
+		4F9EB9A827903FD400B9F31C /* ProfileTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F9EB9A727903FD400B9F31C /* ProfileTextEditor.swift */; };
+		4FA0CA5E2794A02F006120DE /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0CA5D2794A02F006120DE /* UserProfile.swift */; };
+		4FA0CA602794BCF1006120DE /* TouchLocatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FA0CA5F2794BCF1006120DE /* TouchLocatingView.swift */; };
+		4FB0E08F27973FB800CC65F3 /* FilledLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB0E08E27973FB800CC65F3 /* FilledLoadingView.swift */; };
+		4FB9614C279DFB6D00CF0FEF /* MatchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9614B279DFB6D00CF0FEF /* MatchModel.swift */; };
+		4FB9614E279DFD4500CF0FEF /* MatchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9614D279DFD4500CF0FEF /* MatchItemView.swift */; };
+		4FB96150279E054A00CF0FEF /* FirestoreMatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9614F279E054A00CF0FEF /* FirestoreMatch.swift */; };
+		4FB96152279EB95700CF0FEF /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB96151279EB95700CF0FEF /* ChatView.swift */; };
+		4FB96156279ECE4A00CF0FEF /* ContentMessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB96155279ECE4A00CF0FEF /* ContentMessageView.swift */; };
+		4FB96158279ECE5500CF0FEF /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB96157279ECE5500CF0FEF /* MessageView.swift */; };
+		4FB9615A279EDB0A00CF0FEF /* MessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB96159279EDB0A00CF0FEF /* MessageModel.swift */; };
+		4FB9615C279EED2700CF0FEF /* FirestoreMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB9615B279EED2700CF0FEF /* FirestoreMessage.swift */; };
+		4FBA8DA9278EE77A0093DC26 /* DragRelocateDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA8DA8278EE77A0093DC26 /* DragRelocateDelegate.swift */; };
+		4FBA8DAB278EE7B00093DC26 /* ReorderableForEach.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA8DAA278EE7B00093DC26 /* ReorderableForEach.swift */; };
+		4FBA8DAD278EFA760093DC26 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA8DAC278EFA760093DC26 /* ProfileSection.swift */; };
+		4FBA8DAF278F02950093DC26 /* ProfileRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA8DAE278F02950093DC26 /* ProfileRow.swift */; };
+		4FBA8DB1278F08630093DC26 /* ProfileLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBA8DB0278F08630093DC26 /* ProfileLabel.swift */; };
+		4FBBA11227977002003BC15D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FBBA11127977002003BC15D /* Constants.swift */; };
+		4FBBA11B27977419003BC15D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FBBA11D27977419003BC15D /* Localizable.strings */; };
+		4FEB4276278DA433004B06AF /* FirestoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB4275278DA433004B06AF /* FirestoreViewModel.swift */; };
+		4FEB427A278DA96D004B06AF /* TinderCloneCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB4278278DA96D004B06AF /* TinderCloneCoreData.xcdatamodeld */; };
+		4FEB427C278DAD97004B06AF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FEB427B278DAD97004B06AF /* Persistence.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F0899472780939B00A3BE95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F08992E2780939A00A3BE95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F0899352780939A00A3BE95;
+			remoteInfo = "tinder-clone";
+		};
+		4F0899512780939B00A3BE95 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F08992E2780939A00A3BE95 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F0899352780939A00A3BE95;
+			remoteInfo = "tinder-clone";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F0899362780939A00A3BE95 /* Tinder Clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tinder Clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0899392780939A00A3BE95 /* tinder_cloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinder_cloneApp.swift; sourceTree = "<group>"; };
+		4F08993B2780939A00A3BE95 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		4F08993D2780939B00A3BE95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F0899402780939B00A3BE95 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4F0899462780939B00A3BE95 /* tinder-cloneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tinder-cloneTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F08994A2780939B00A3BE95 /* tinder_cloneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinder_cloneTests.swift; sourceTree = "<group>"; };
+		4F0899502780939B00A3BE95 /* tinder-cloneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tinder-cloneUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F0899542780939B00A3BE95 /* tinder_cloneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinder_cloneUITests.swift; sourceTree = "<group>"; };
+		4F0899562780939B00A3BE95 /* tinder_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinder_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		4F089963278093E200A3BE95 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		4F089964278093E200A3BE95 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		4F089965278093E200A3BE95 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4F0899752780963500A3BE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		4F0899782780B53900A3BE95 /* GradientOutlineButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientOutlineButton.swift; sourceTree = "<group>"; };
+		4F08997A2780B9AC00A3BE95 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		4F08997C2780E16D00A3BE95 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
+		4F08997E2780E34900A3BE95 /* SwipeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeCardView.swift; sourceTree = "<group>"; };
+		4F0899822780F0B400A3BE95 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		4F0899842781007900A3BE95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4F0C781527A5882500F0B371 /* CameraService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraService.swift; sourceTree = "<group>"; };
+		4F0C781727A5882B00F0B371 /* CameraPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraPreview.swift; sourceTree = "<group>"; };
+		4F190D8D279DD8BB00393CE8 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
+		4F31453C2782284C008D5D4A /* SwipeableCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeableCardView.swift; sourceTree = "<group>"; };
+		4F31453E278258FD008D5D4A /* EditProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileView.swift; sourceTree = "<group>"; };
+		4F31454027825B38008D5D4A /* MatchListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchListView.swift; sourceTree = "<group>"; };
+		4F3145422782618E008D5D4A /* CreateProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProfileView.swift; sourceTree = "<group>"; };
+		4F31454427826E47008D5D4A /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		4F31454627830F2D008D5D4A /* AddImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageView.swift; sourceTree = "<group>"; };
+		4F31454A27832448008D5D4A /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		4F31454C27835D56008D5D4A /* ContentTypeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentTypeView.swift; sourceTree = "<group>"; };
+		4F31454E2783721A008D5D4A /* AddedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedImageView.swift; sourceTree = "<group>"; };
+		4F31455027837AB5008D5D4A /* FirestoreUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreUser.swift; sourceTree = "<group>"; };
+		4F314555278499ED008D5D4A /* PictureGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureGridView.swift; sourceTree = "<group>"; };
+		4F9EB9A3279023A100B9F31C /* DropOutsideDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropOutsideDelegate.swift; sourceTree = "<group>"; };
+		4F9EB9A527903CF300B9F31C /* ProfileForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileForm.swift; sourceTree = "<group>"; };
+		4F9EB9A727903FD400B9F31C /* ProfileTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextEditor.swift; sourceTree = "<group>"; };
+		4FA0CA5D2794A02F006120DE /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+		4FA0CA5F2794BCF1006120DE /* TouchLocatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchLocatingView.swift; sourceTree = "<group>"; };
+		4FB0E08E27973FB800CC65F3 /* FilledLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilledLoadingView.swift; sourceTree = "<group>"; };
+		4FB9614B279DFB6D00CF0FEF /* MatchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModel.swift; sourceTree = "<group>"; };
+		4FB9614D279DFD4500CF0FEF /* MatchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchItemView.swift; sourceTree = "<group>"; };
+		4FB9614F279E054A00CF0FEF /* FirestoreMatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreMatch.swift; sourceTree = "<group>"; };
+		4FB96151279EB95700CF0FEF /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		4FB96155279ECE4A00CF0FEF /* ContentMessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentMessageView.swift; sourceTree = "<group>"; };
+		4FB96157279ECE5500CF0FEF /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
+		4FB96159279EDB0A00CF0FEF /* MessageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageModel.swift; sourceTree = "<group>"; };
+		4FB9615B279EED2700CF0FEF /* FirestoreMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreMessage.swift; sourceTree = "<group>"; };
+		4FBA8DA8278EE77A0093DC26 /* DragRelocateDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragRelocateDelegate.swift; sourceTree = "<group>"; };
+		4FBA8DAA278EE7B00093DC26 /* ReorderableForEach.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReorderableForEach.swift; sourceTree = "<group>"; };
+		4FBA8DAC278EFA760093DC26 /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
+		4FBA8DAE278F02950093DC26 /* ProfileRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRow.swift; sourceTree = "<group>"; };
+		4FBA8DB0278F08630093DC26 /* ProfileLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileLabel.swift; sourceTree = "<group>"; };
+		4FBBA11127977002003BC15D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4FBBA11C27977419003BC15D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4FBBA11E27977445003BC15D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4FEB4275278DA433004B06AF /* FirestoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreViewModel.swift; sourceTree = "<group>"; };
+		4FEB4279278DA96D004B06AF /* TinderCloneCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TinderCloneCoreData.xcdatamodel; sourceTree = "<group>"; };
+		4FEB427B278DAD97004B06AF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F0899332780939A00A3BE95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F08996D278094E600A3BE95 /* FirebaseAuth in Frameworks */,
+				4F089974278095B300A3BE95 /* GoogleSignIn in Frameworks */,
+				4F31455427837E5C008D5D4A /* FirebaseFirestoreSwift-Beta in Frameworks */,
+				4F08996F278094E600A3BE95 /* FirebaseFirestore in Frameworks */,
+				4F089971278094E600A3BE95 /* FirebaseStorage in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0899432780939B00A3BE95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F08994D2780939B00A3BE95 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F08992D2780939A00A3BE95 = {
+			isa = PBXGroup;
+			children = (
+				4F0899382780939A00A3BE95 /* tinder-clone */,
+				4F0899492780939B00A3BE95 /* tinder-cloneTests */,
+				4F0899532780939B00A3BE95 /* tinder-cloneUITests */,
+				4F0899372780939A00A3BE95 /* Products */,
+				4F31455227837E03008D5D4A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F0899372780939A00A3BE95 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F0899362780939A00A3BE95 /* Tinder Clone.app */,
+				4F0899462780939B00A3BE95 /* tinder-cloneTests.xctest */,
+				4F0899502780939B00A3BE95 /* tinder-cloneUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F0899382780939A00A3BE95 /* tinder-clone */ = {
+			isa = PBXGroup;
+			children = (
+				4FEB4274278DA174004B06AF /* domain */,
+				4FEB426D278D9F6A004B06AF /* ui */,
+				4F0899842781007900A3BE95 /* GoogleService-Info.plist */,
+				4F0899752780963500A3BE95 /* Info.plist */,
+				4F08993D2780939B00A3BE95 /* Assets.xcassets */,
+				4F08993F2780939B00A3BE95 /* Preview Content */,
+				4FBBA11D27977419003BC15D /* Localizable.strings */,
+			);
+			path = "tinder-clone";
+			sourceTree = "<group>";
+		};
+		4F08993F2780939B00A3BE95 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				4F0899402780939B00A3BE95 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4F0899492780939B00A3BE95 /* tinder-cloneTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F08994A2780939B00A3BE95 /* tinder_cloneTests.swift */,
+			);
+			path = "tinder-cloneTests";
+			sourceTree = "<group>";
+		};
+		4F0899532780939B00A3BE95 /* tinder-cloneUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4F0899542780939B00A3BE95 /* tinder_cloneUITests.swift */,
+				4F0899562780939B00A3BE95 /* tinder_cloneUITestsLaunchTests.swift */,
+			);
+			path = "tinder-cloneUITests";
+			sourceTree = "<group>";
+		};
+		4F0C781427A585C600F0B371 /* camera */ = {
+			isa = PBXGroup;
+			children = (
+				4F0C781727A5882B00F0B371 /* CameraPreview.swift */,
+				4F0C781527A5882500F0B371 /* CameraService.swift */,
+			);
+			path = camera;
+			sourceTree = "<group>";
+		};
+		4F31455227837E03008D5D4A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4FB9615D279EED9E00CF0FEF /* firestore */ = {
+			isa = PBXGroup;
+			children = (
+				4FB9615B279EED2700CF0FEF /* FirestoreMessage.swift */,
+				4FB9614F279E054A00CF0FEF /* FirestoreMatch.swift */,
+				4F31455027837AB5008D5D4A /* FirestoreUser.swift */,
+			);
+			path = firestore;
+			sourceTree = "<group>";
+		};
+		4FEB426D278D9F6A004B06AF /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				4F0C781427A585C600F0B371 /* camera */,
+				4FEB4273278DA0A2004B06AF /* app */,
+				4FEB4272278DA03F004B06AF /* profile */,
+				4FEB4271278D9FBA004B06AF /* matches */,
+				4FEB4270278D9FA7004B06AF /* common */,
+				4FEB426F278D9F91004B06AF /* home */,
+				4FEB426E278D9F6F004B06AF /* login */,
+			);
+			path = ui;
+			sourceTree = "<group>";
+		};
+		4FEB426E278D9F6F004B06AF /* login */ = {
+			isa = PBXGroup;
+			children = (
+				4F089965278093E200A3BE95 /* LoginView.swift */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		4FEB426F278D9F91004B06AF /* home */ = {
+			isa = PBXGroup;
+			children = (
+				4F08997C2780E16D00A3BE95 /* SwipeView.swift */,
+				4F08997E2780E34900A3BE95 /* SwipeCardView.swift */,
+				4F31453C2782284C008D5D4A /* SwipeableCardView.swift */,
+				4F089964278093E200A3BE95 /* HomeView.swift */,
+				4F190D8D279DD8BB00393CE8 /* MatchView.swift */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		4FEB4270278D9FA7004B06AF /* common */ = {
+			isa = PBXGroup;
+			children = (
+				4F31454A27832448008D5D4A /* ImagePicker.swift */,
+				4F31454427826E47008D5D4A /* LoadingView.swift */,
+				4F0899822780F0B400A3BE95 /* AppColor.swift */,
+				4F0899782780B53900A3BE95 /* GradientOutlineButton.swift */,
+				4F08997A2780B9AC00A3BE95 /* Extensions.swift */,
+				4FBA8DA8278EE77A0093DC26 /* DragRelocateDelegate.swift */,
+				4FBA8DAA278EE7B00093DC26 /* ReorderableForEach.swift */,
+				4F9EB9A3279023A100B9F31C /* DropOutsideDelegate.swift */,
+				4FA0CA5F2794BCF1006120DE /* TouchLocatingView.swift */,
+				4FB0E08E27973FB800CC65F3 /* FilledLoadingView.swift */,
+				4FBBA11127977002003BC15D /* Constants.swift */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
+		4FEB4271278D9FBA004B06AF /* matches */ = {
+			isa = PBXGroup;
+			children = (
+				4F31454027825B38008D5D4A /* MatchListView.swift */,
+				4FB9614D279DFD4500CF0FEF /* MatchItemView.swift */,
+				4FB96151279EB95700CF0FEF /* ChatView.swift */,
+				4FB96155279ECE4A00CF0FEF /* ContentMessageView.swift */,
+				4FB96157279ECE5500CF0FEF /* MessageView.swift */,
+			);
+			path = matches;
+			sourceTree = "<group>";
+		};
+		4FEB4272278DA03F004B06AF /* profile */ = {
+			isa = PBXGroup;
+			children = (
+				4FBA8DAC278EFA760093DC26 /* ProfileSection.swift */,
+				4FBA8DAE278F02950093DC26 /* ProfileRow.swift */,
+				4F31454E2783721A008D5D4A /* AddedImageView.swift */,
+				4F31454627830F2D008D5D4A /* AddImageView.swift */,
+				4F3145422782618E008D5D4A /* CreateProfileView.swift */,
+				4F31453E278258FD008D5D4A /* EditProfileView.swift */,
+				4F314555278499ED008D5D4A /* PictureGridView.swift */,
+				4F31454C27835D56008D5D4A /* ContentTypeView.swift */,
+				4FBA8DB0278F08630093DC26 /* ProfileLabel.swift */,
+				4F9EB9A527903CF300B9F31C /* ProfileForm.swift */,
+				4F9EB9A727903FD400B9F31C /* ProfileTextEditor.swift */,
+			);
+			path = profile;
+			sourceTree = "<group>";
+		};
+		4FEB4273278DA0A2004B06AF /* app */ = {
+			isa = PBXGroup;
+			children = (
+				4FEB4277278DA6A5004B06AF /* viewmodel */,
+				4F0899392780939A00A3BE95 /* tinder_cloneApp.swift */,
+				4F08993B2780939A00A3BE95 /* ContentView.swift */,
+			);
+			path = app;
+			sourceTree = "<group>";
+		};
+		4FEB4274278DA174004B06AF /* domain */ = {
+			isa = PBXGroup;
+			children = (
+				4FB9615D279EED9E00CF0FEF /* firestore */,
+				4FEB4278278DA96D004B06AF /* TinderCloneCoreData.xcdatamodeld */,
+				4FEB427B278DAD97004B06AF /* Persistence.swift */,
+				4FA0CA5D2794A02F006120DE /* UserProfile.swift */,
+				4FB9614B279DFB6D00CF0FEF /* MatchModel.swift */,
+				4FB96159279EDB0A00CF0FEF /* MessageModel.swift */,
+			);
+			path = domain;
+			sourceTree = "<group>";
+		};
+		4FEB4277278DA6A5004B06AF /* viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				4F089963278093E200A3BE95 /* AuthViewModel.swift */,
+				4FEB4275278DA433004B06AF /* FirestoreViewModel.swift */,
+			);
+			path = viewmodel;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F0899352780939A00A3BE95 /* tinder-clone */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F08995A2780939B00A3BE95 /* Build configuration list for PBXNativeTarget "tinder-clone" */;
+			buildPhases = (
+				4F0899322780939A00A3BE95 /* Sources */,
+				4F0899332780939A00A3BE95 /* Frameworks */,
+				4F0899342780939A00A3BE95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "tinder-clone";
+			packageProductDependencies = (
+				4F08996C278094E600A3BE95 /* FirebaseAuth */,
+				4F08996E278094E600A3BE95 /* FirebaseFirestore */,
+				4F089970278094E600A3BE95 /* FirebaseStorage */,
+				4F089973278095B300A3BE95 /* GoogleSignIn */,
+				4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */,
+			);
+			productName = "tinder-clone";
+			productReference = 4F0899362780939A00A3BE95 /* Tinder Clone.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F0899452780939B00A3BE95 /* tinder-cloneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F08995D2780939B00A3BE95 /* Build configuration list for PBXNativeTarget "tinder-cloneTests" */;
+			buildPhases = (
+				4F0899422780939B00A3BE95 /* Sources */,
+				4F0899432780939B00A3BE95 /* Frameworks */,
+				4F0899442780939B00A3BE95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F0899482780939B00A3BE95 /* PBXTargetDependency */,
+			);
+			name = "tinder-cloneTests";
+			productName = "tinder-cloneTests";
+			productReference = 4F0899462780939B00A3BE95 /* tinder-cloneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4F08994F2780939B00A3BE95 /* tinder-cloneUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F0899602780939B00A3BE95 /* Build configuration list for PBXNativeTarget "tinder-cloneUITests" */;
+			buildPhases = (
+				4F08994C2780939B00A3BE95 /* Sources */,
+				4F08994D2780939B00A3BE95 /* Frameworks */,
+				4F08994E2780939B00A3BE95 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F0899522780939B00A3BE95 /* PBXTargetDependency */,
+			);
+			name = "tinder-cloneUITests";
+			productName = "tinder-cloneUITests";
+			productReference = 4F0899502780939B00A3BE95 /* tinder-cloneUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F08992E2780939A00A3BE95 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1310;
+				TargetAttributes = {
+					4F0899352780939A00A3BE95 = {
+						CreatedOnToolsVersion = 13.1;
+					};
+					4F0899452780939B00A3BE95 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 4F0899352780939A00A3BE95;
+					};
+					4F08994F2780939B00A3BE95 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 4F0899352780939A00A3BE95;
+					};
+				};
+			};
+			buildConfigurationList = 4F0899312780939A00A3BE95 /* Build configuration list for PBXProject "tinder-clone" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				es,
+				Base,
+			);
+			mainGroup = 4F08992D2780939A00A3BE95;
+			packageReferences = (
+				4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				4F089972278095B300A3BE95 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
+			);
+			productRefGroup = 4F0899372780939A00A3BE95 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F0899352780939A00A3BE95 /* tinder-clone */,
+				4F0899452780939B00A3BE95 /* tinder-cloneTests */,
+				4F08994F2780939B00A3BE95 /* tinder-cloneUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F0899342780939A00A3BE95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0899412780939B00A3BE95 /* Preview Assets.xcassets in Resources */,
+				4FBBA11B27977419003BC15D /* Localizable.strings in Resources */,
+				4F08993E2780939B00A3BE95 /* Assets.xcassets in Resources */,
+				4F0899852781007900A3BE95 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0899442780939B00A3BE95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F08994E2780939B00A3BE95 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F0899322780939A00A3BE95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4FB96156279ECE4A00CF0FEF /* ContentMessageView.swift in Sources */,
+				4FBA8DAF278F02950093DC26 /* ProfileRow.swift in Sources */,
+				4F0899792780B53900A3BE95 /* GradientOutlineButton.swift in Sources */,
+				4F31453F278258FD008D5D4A /* EditProfileView.swift in Sources */,
+				4F0899832780F0B400A3BE95 /* AppColor.swift in Sources */,
+				4FB9614E279DFD4500CF0FEF /* MatchItemView.swift in Sources */,
+				4F31454B27832448008D5D4A /* ImagePicker.swift in Sources */,
+				4F31455127837AB5008D5D4A /* FirestoreUser.swift in Sources */,
+				4F089966278093E200A3BE95 /* AuthViewModel.swift in Sources */,
+				4F3145432782618E008D5D4A /* CreateProfileView.swift in Sources */,
+				4F31454527826E47008D5D4A /* LoadingView.swift in Sources */,
+				4F31454F2783721A008D5D4A /* AddedImageView.swift in Sources */,
+				4F0C781627A5882500F0B371 /* CameraService.swift in Sources */,
+				4F190D8E279DD8BB00393CE8 /* MatchView.swift in Sources */,
+				4FB96158279ECE5500CF0FEF /* MessageView.swift in Sources */,
+				4FB96150279E054A00CF0FEF /* FirestoreMatch.swift in Sources */,
+				4F314556278499ED008D5D4A /* PictureGridView.swift in Sources */,
+				4FB9615C279EED2700CF0FEF /* FirestoreMessage.swift in Sources */,
+				4F31454127825B38008D5D4A /* MatchListView.swift in Sources */,
+				4FBA8DB1278F08630093DC26 /* ProfileLabel.swift in Sources */,
+				4F9EB9A627903CF300B9F31C /* ProfileForm.swift in Sources */,
+				4FB9615A279EDB0A00CF0FEF /* MessageModel.swift in Sources */,
+				4FEB4276278DA433004B06AF /* FirestoreViewModel.swift in Sources */,
+				4F31453D2782284C008D5D4A /* SwipeableCardView.swift in Sources */,
+				4F089967278093E200A3BE95 /* HomeView.swift in Sources */,
+				4FA0CA5E2794A02F006120DE /* UserProfile.swift in Sources */,
+				4FA0CA602794BCF1006120DE /* TouchLocatingView.swift in Sources */,
+				4F08993C2780939A00A3BE95 /* ContentView.swift in Sources */,
+				4FBA8DA9278EE77A0093DC26 /* DragRelocateDelegate.swift in Sources */,
+				4F31454D27835D56008D5D4A /* ContentTypeView.swift in Sources */,
+				4F9EB9A827903FD400B9F31C /* ProfileTextEditor.swift in Sources */,
+				4F9EB9A4279023A100B9F31C /* DropOutsideDelegate.swift in Sources */,
+				4FBA8DAD278EFA760093DC26 /* ProfileSection.swift in Sources */,
+				4F089968278093E200A3BE95 /* LoginView.swift in Sources */,
+				4F08997D2780E16E00A3BE95 /* SwipeView.swift in Sources */,
+				4F08993A2780939A00A3BE95 /* tinder_cloneApp.swift in Sources */,
+				4FB9614C279DFB6D00CF0FEF /* MatchModel.swift in Sources */,
+				4FBA8DAB278EE7B00093DC26 /* ReorderableForEach.swift in Sources */,
+				4FB96152279EB95700CF0FEF /* ChatView.swift in Sources */,
+				4FEB427C278DAD97004B06AF /* Persistence.swift in Sources */,
+				4F31454727830F2D008D5D4A /* AddImageView.swift in Sources */,
+				4FEB427A278DA96D004B06AF /* TinderCloneCoreData.xcdatamodeld in Sources */,
+				4F08997B2780B9AC00A3BE95 /* Extensions.swift in Sources */,
+				4F08997F2780E34900A3BE95 /* SwipeCardView.swift in Sources */,
+				4FBBA11227977002003BC15D /* Constants.swift in Sources */,
+				4F0C781827A5882B00F0B371 /* CameraPreview.swift in Sources */,
+				4FB0E08F27973FB800CC65F3 /* FilledLoadingView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F0899422780939B00A3BE95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F08994B2780939B00A3BE95 /* tinder_cloneTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F08994C2780939B00A3BE95 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F0899572780939B00A3BE95 /* tinder_cloneUITestsLaunchTests.swift in Sources */,
+				4F0899552780939B00A3BE95 /* tinder_cloneUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F0899482780939B00A3BE95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F0899352780939A00A3BE95 /* tinder-clone */;
+			targetProxy = 4F0899472780939B00A3BE95 /* PBXContainerItemProxy */;
+		};
+		4F0899522780939B00A3BE95 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F0899352780939A00A3BE95 /* tinder-clone */;
+			targetProxy = 4F0899512780939B00A3BE95 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4FBBA11D27977419003BC15D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4FBBA11C27977419003BC15D /* en */,
+				4FBBA11E27977445003BC15D /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F0899582780939B00A3BE95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F0899592780939B00A3BE95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F08995B2780939B00A3BE95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tinder-clone/Preview Content\"";
+				DEVELOPMENT_TEAM = WB5S22UYW3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tinder-clone/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpi.tinder-clone";
+				PRODUCT_NAME = "Tinder Clone";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F08995C2780939B00A3BE95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"tinder-clone/Preview Content\"";
+				DEVELOPMENT_TEAM = WB5S22UYW3;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "tinder-clone/Info.plist";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpi.tinder-clone";
+				PRODUCT_NAME = "Tinder Clone";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4F08995E2780939B00A3BE95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB5S22UYW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpi.tinder-cloneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinder Clone.app/Tinder Clone";
+			};
+			name = Debug;
+		};
+		4F08995F2780939B00A3BE95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB5S22UYW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpi.tinder-cloneTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Tinder Clone.app/Tinder Clone";
+			};
+			name = Release;
+		};
+		4F0899612780939B00A3BE95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB5S22UYW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpi.tinder-cloneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tinder-clone";
+			};
+			name = Debug;
+		};
+		4F0899622780939B00A3BE95 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = WB5S22UYW3;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alexpi.tinder-cloneUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "tinder-clone";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F0899312780939A00A3BE95 /* Build configuration list for PBXProject "tinder-clone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0899582780939B00A3BE95 /* Debug */,
+				4F0899592780939B00A3BE95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F08995A2780939B00A3BE95 /* Build configuration list for PBXNativeTarget "tinder-clone" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F08995B2780939B00A3BE95 /* Debug */,
+				4F08995C2780939B00A3BE95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F08995D2780939B00A3BE95 /* Build configuration list for PBXNativeTarget "tinder-cloneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F08995E2780939B00A3BE95 /* Debug */,
+				4F08995F2780939B00A3BE95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F0899602780939B00A3BE95 /* Build configuration list for PBXNativeTarget "tinder-cloneUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F0899612780939B00A3BE95 /* Debug */,
+				4F0899622780939B00A3BE95 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		4F089972278095B300A3BE95 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4F08996C278094E600A3BE95 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		4F08996E278094E600A3BE95 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		4F089970278094E600A3BE95 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		4F089973278095B300A3BE95 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F089972278095B300A3BE95 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4F08996B278094E600A3BE95 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreSwift-Beta";
+		};
+/* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		4FEB4278278DA96D004B06AF /* TinderCloneCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4FEB4279278DA96D004B06AF /* TinderCloneCoreData.xcdatamodel */,
+			);
+			currentVersion = 4FEB4279278DA96D004B06AF /* TinderCloneCoreData.xcdatamodel */;
+			path = TinderCloneCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4F08992E2780939A00A3BE95 /* Project object */;
+}
