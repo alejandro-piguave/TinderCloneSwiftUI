@@ -59,3 +59,6 @@ Here the user will be able to send messages to his matches and they will be upda
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/chat_screen.PNG" width="250" />
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/chat_screen_dark.PNG" width="250" /> 
 </p>
+
+
+Note: The file "GoogleService-Info.plist" required for the project to work is missing. You will need to connect it to your own Firebase project.
