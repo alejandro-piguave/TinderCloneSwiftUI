@@ -15,10 +15,12 @@ In this screen the user will be required to complete the following actions:
 * The user's gender (to simplify profile fetching and the matching algorithm only two options are available although more options could be added).
 * The user interests: his own gender, the opposite, or both.
 
-![Create Profile Screen 1](https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_1.PNG =300x650)
-![Create Profile Screen 2](https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_2.PNG =300x650)
-![Create Profile Screen Dark 1](https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_1.PNG =300x650)
-![Create Profile Screen Dark 2](https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_2.PNG =300x650)
+<p float="left">
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_1.PNG" width="300" />
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_2.PNG" width="300" /> 
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_1.PNG" width="300" />
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_2.PNG" width="300" />
+</p>
 
 ## Home screen
 Here the user will be able to browse trough profiles and either swipe left or right on them in a Tinder-like fashion. Both swipe and button click to perform these actions are supported. If a user likes a user that has liked them before, a match showing said user will appear. Once a profile has been liked or disliked it will not be shown again to that user. From here the user can access to:
