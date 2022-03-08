@@ -1,7 +1,7 @@
 # tinder-clone-ios-public
 Tinder clone application written using SwiftUI, Firebase, CoreData, Swift Package Manager and iOS 15 technologies with an MVVM architectural pattern. The app contains localizations for both English and Spanish languages and support for dark mode. Below a more detailed description of the app features.
 
-##Login screen
+## Login screen
 Only Google Sign in is allowed. Once the user has logged in, the app will perform a check to decide if the user has already created a profile, if that's the case, he will be redirected to the Home screen, otherwise the Create Profile screen will be shown for the user to complete his profile information before proceding to use the application.
 
 <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/login_screen.jpeg" width="250">
