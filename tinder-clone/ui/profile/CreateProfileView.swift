@@ -14,7 +14,7 @@ struct CreateProfileView: View {
     @State private var datePickerSelection: Date = Date()
     @State private var genderSelection: String = ""
     @State private var orientationSelection: Orientation? = nil
-    @State private var pictures: [UIImage] = [UIImage()]
+    @State private var pictures: [UIImage] = []
     @State private var image = UIImage()
     @State private var selectedContentType: UIImagePickerController.SourceType = .photoLibrary
     
