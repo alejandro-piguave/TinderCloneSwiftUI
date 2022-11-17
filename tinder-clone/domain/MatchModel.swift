@@ -8,6 +8,7 @@ import UIKit
 
 struct MatchModel: Identifiable{
     let id: String
+    let timestamp: Date
     let userId: String
     let name: String
     let birthDate: Date

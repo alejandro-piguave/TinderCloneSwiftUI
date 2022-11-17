@@ -22,9 +22,7 @@ struct CameraPreview: UIViewRepresentable{
         return view
     }
     
-    func updateUIView(_ uiView: UIView, context: Context) {
-    }
-    
+    func updateUIView(_ uiView: UIView, context: Context) { }
     
     typealias UIViewType = UIView
 }

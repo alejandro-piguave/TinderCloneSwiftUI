@@ -14,14 +14,12 @@ struct tinder_cloneApp: App {
     
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
-    @StateObject var authViewModel = AuthViewModel()
-    @StateObject var firestoreViewModel = FirestoreViewModel()
+    @StateObject var contentViewModel = ContentViewModel()
     
     var body: some Scene {
         WindowGroup {
             ContentView()
-                .environmentObject(authViewModel)
-                .environmentObject(firestoreViewModel)
+                .environmentObject(contentViewModel)
         }
     }
 }

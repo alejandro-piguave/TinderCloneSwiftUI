@@ -6,27 +6,31 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-
-public struct FirestoreUser: Codable {
+public struct FirestoreUser: Codable, Equatable {
+    @DocumentID var id: String?
     let name: String
     let birthDate: Date
     let bio: String
     let isMale: Bool
     let orientation: Orientation
+    let pictures: [String]
     let liked: [String]
     let passed: [String]
     
     var age: Int{
-        return Date().years(from: birthDate)
+        Date().years(from: birthDate)
     }
 
     enum CodingKeys: String, CodingKey {
+        case id
         case name
         case birthDate
         case bio
         case isMale = "male"
         case orientation
+        case pictures
         case liked
         case passed
     }

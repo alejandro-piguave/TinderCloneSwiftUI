@@ -29,7 +29,7 @@ struct MatchItemView: View {
 struct MatchChatView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView{
-            MatchItemView(model: MatchModel(id: "fefregergerger",userId: "efwerfgregrger",name: "Elon", birthDate: Date(), picture: UIImage(named:"elon_musk")!, lastMessage: ""))
+            MatchItemView(model: MatchModel(id: "fefregergerger", timestamp: Date(),userId: "efwerfgregrger",name: "Elon", birthDate: Date(), picture: UIImage(named:"elon_musk")!, lastMessage: ""))
         }.navigationTitle("Messages")
     }
 }

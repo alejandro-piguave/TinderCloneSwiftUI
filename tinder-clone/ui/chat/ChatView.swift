@@ -9,11 +9,9 @@ import SwiftUI
 import Firebase
 
 struct ChatView: View {
-    @EnvironmentObject var firestoreViewModel: FirestoreViewModel
     let match: MatchModel
+    @StateObject var chatViewModel =  ChatViewModel()
     @State private var typingMessage: String = ""
-    @State private var messageList: [MessageModel] = []
-    @State private var listener: ListenerRegistration? = nil
     @State private var isFirstMessageUpdate = true
     var body: some View {
         VStack{
@@ -21,20 +19,20 @@ struct ChatView: View {
             ScrollViewReader{ value in
                 ScrollView{
                     LazyVStack{
-                        ForEach(messageList){ message in
+                        ForEach(chatViewModel.messageList){ message in
                             MessageView(message: message, match: match)
                                 .id(message.id)
                         }
                     }
                 }
                 .padding([.leading, .trailing], 8)
-                .onChange(of: messageList, perform: { _ in
+                .onChange(of: chatViewModel.messageList, perform: { _ in
                     if isFirstMessageUpdate{
-                        value.scrollTo(messageList.last?.id, anchor: .bottom)
+                        value.scrollTo(chatViewModel.messageList.last?.id, anchor: .bottom)
                         isFirstMessageUpdate = false
                     } else{
                         withAnimation{
-                            value.scrollTo(messageList.last?.id, anchor: .bottom)
+                            value.scrollTo(chatViewModel.messageList.last?.id, anchor: .bottom)
                         }
                     }
                 })
@@ -54,28 +52,21 @@ struct ChatView: View {
     }
     
     private func performOnDisappear(){
-        listener?.remove()
+        chatViewModel.removeListener()
     }
     
     private func performOnAppear(){
-        listener = firestoreViewModel.listenToMessages(matchId: match.id, onUpdate: {result in
-            switch result{
-            case .success(let messages):
-                messageList = messages
-                return
-            case .failure(_): return
-            }
-        })
+        chatViewModel.listenToMessages(matchId: match.id)
     }
     
     private func sendMessage(){
-        firestoreViewModel.sendMessage(matchId: match.id, message: typingMessage)
+        chatViewModel.sendMessage(matchId: match.id, message: typingMessage)
         typingMessage = ""
     }
 }
 
 struct ChatView_Previews: PreviewProvider {
     static var previews: some View {
-        ChatView(match: MatchModel(id: "efefefeº", userId: "fregregreg",name: "Elon", birthDate: Date(), picture: UIImage(named: "elon_musk")!, lastMessage: "Sup bro"))
+        ChatView(match: MatchModel(id: "efefefeº", timestamp: Date(), userId: "fregregreg",name: "Elon", birthDate: Date(), picture: UIImage(named: "elon_musk")!, lastMessage: "Sup bro"))
     }
 }

@@ -8,19 +8,17 @@
 import SwiftUI
 
 struct MatchListView: View {
-    @EnvironmentObject var firestoreViewModel: FirestoreViewModel
-    @State private var loading = true
-    @State private var matches: [MatchModel] = []
-
+    @StateObject private var matchListViewModel = MatchListViewModel()
+    
     var body: some View {
         VStack{
-            if(loading){
+            if(matchListViewModel.isLoading){
                 ProgressView()
             }else {
-                if(matches.isEmpty){
+                if(matchListViewModel.matchModels.isEmpty){
                     Text("no-matches-yet")
                 } else {
-                    List(matches){ item in
+                    List(matchListViewModel.matchModels){ item in
                         NavigationLink(destination: ChatView(match: item)){
                             MatchItemView(model: item)
                         }
@@ -30,29 +28,17 @@ struct MatchListView: View {
         }
         .navigationTitle("messages")
         .onAppear(perform: performOnAppear)
-        
     }
-    
-    private func onReceiveMatches(result: Result<[MatchModel], DomainError>){
-        loading = false
-        switch result{
-        case .success(let matches):
-            self.matches = matches
-            return
-        case .failure(_):
-            return
-        }
-    }
-    
-    
+
     private func performOnAppear(){
-        firestoreViewModel.fetchMatches(onCompletion: onReceiveMatches)
+        if matchListViewModel.isFirstFetching{
+            matchListViewModel.fetchMatches()
+        }
     }
 }
 
 struct MatchListView_Previews: PreviewProvider {
     static var previews: some View {
         MatchListView()
-            .environmentObject(FirestoreViewModel())
     }
 }

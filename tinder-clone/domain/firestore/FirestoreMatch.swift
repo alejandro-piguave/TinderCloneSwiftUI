@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
 struct FirestoreMatch: Codable{
+    @DocumentID var id: String?
     let usersMatched: [String]
     let timestamp: Date
 }

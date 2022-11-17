@@ -8,28 +8,22 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var authState: AuthState? = .loading
-    @EnvironmentObject var loginViewModel: AuthViewModel
-    
-    @ViewBuilder
-    func contentBuilder() -> some View {
-        switch(loginViewModel.authState){
-        case .loading:
-            LoadingView()
-        case .logged:
-            HomeView()
-        case .unlogged:
-            LoginView()
-        case .pendingInformation:
-            CreateProfileView()
-        }
-    }
+    @EnvironmentObject var contentViewModel: ContentViewModel
     
     var body: some View {
-        contentBuilder()
-            .onAppear(perform: {
-                loginViewModel.updateAuthState()
-            })
+        NavigationView{
+            switch(contentViewModel.authState){
+            case .loading:
+                LoadingView()
+            case .logged:
+                HomeView()
+            case .unlogged:
+                LoginView()
+            }
+        }.onAppear(perform: {
+            contentViewModel.updateAuthState()
+        })
+            
     }
 }
 

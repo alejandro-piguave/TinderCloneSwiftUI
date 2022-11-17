@@ -34,6 +34,6 @@ struct MessageView: View {
 
 struct MessageView_Previews: PreviewProvider {
     static var previews: some View {
-        MessageView(message: MessageModel(id: "efefefefe", isCurrentUser: true, timestamp: Date(), message: "sfrffrdref"), match: MatchModel(id: "fefefe", userId: "ededefd", name: "Elon", birthDate: Date(), picture: UIImage(), lastMessage: nil))
+        MessageView(message: MessageModel(id: "efefefefe", isCurrentUser: true, timestamp: Date(), message: "sfrffrdref"), match: MatchModel(id: "fefefe", timestamp: Date(), userId: "ededefd", name: "Elon", birthDate: Date(), picture: UIImage(), lastMessage: nil))
     }
 }

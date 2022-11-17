@@ -11,14 +11,11 @@ protocol Draggable{
     var isDraggable: Bool { get }
 }
 
-struct ImageWrapper: Draggable, Identifiable, Equatable{
-    var isDraggable: Bool
-    var id: UUID
-    let image: UIImage?
-    init(_ image: UIImage? = nil){
-        self.image = image
-        isDraggable = image != nil
-        id = UUID()
+struct GridCell: Hashable, Identifiable, Draggable{
+    private (set) var id: UUID = UUID()
+    var picture: ProfilePicture? = nil
+    var isDraggable: Bool {
+        picture != nil
     }
 }
 
@@ -28,15 +25,15 @@ struct PictureGridView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    @Binding var pictures: [UIImage]
+    @Binding var pictures: [ProfilePicture]
     @Binding var picturesChanged: Bool
     @Binding var droppedOutside: Bool
-    @State var imageWrapper: [ImageWrapper] = (0...8).map{  _ in ImageWrapper()}
+    @State var cells: [GridCell] = (0...8).map{  _ in GridCell() }
 
     let onAddedImageClick: (Int) -> ()
     let onAddImageClick: () -> ()
     
-    init( pictures: Binding< [UIImage] >,  picturesChanged: Binding<Bool> = .constant(false), droppedOutside: Binding<Bool> = .constant(false), onAddedImageClick: @escaping (Int) -> () = {value in}, onAddImageClick: @escaping () -> () = {}){
+    init( pictures: Binding< [ProfilePicture] >,  picturesChanged: Binding<Bool> = .constant(false), droppedOutside: Binding<Bool> = .constant(false), onAddedImageClick: @escaping (Int) -> () = {value in}, onAddImageClick: @escaping () -> () = {}){
         self._pictures = pictures
         self._picturesChanged = picturesChanged
         self._droppedOutside = droppedOutside
@@ -46,22 +43,26 @@ struct PictureGridView: View {
     
     var body: some View {
         LazyVGrid(columns: columns, spacing: 0) {
-            ReorderableForEach(droppedOutside: $droppedOutside, items: imageWrapper) { item in
-                if let image = item.image, let index = pictures.firstIndex(of: image){
-                    AddedImageView(image: image, action:{
-                        onAddedImageClick(index)
-                    })
-                } else {
-                    AddImageView(action: onAddImageClick)
-                }
+            ReorderableForEach(droppedOutside: $droppedOutside, items: cells) { cell in
+                getCellView(cell: cell)
             } moveAction: { from, to in
                 picturesChanged = true
-                imageWrapper.move(fromOffsets: from, toOffset: to)
+                cells.move(fromOffsets: from, toOffset: to)
             }
         }
         .onChange(of: pictures, perform: { newValue in
-            imageWrapper = (0...8).map{ ImageWrapper( $0 < newValue.count ? newValue[$0] :  nil)  }
+            cells = (0...8).map{ GridCell(picture: $0 < newValue.count ? newValue[$0] : nil)}
         })
+    }
+    
+    func getCellView(cell: GridCell) -> some View {
+        if let picture = cell.picture, let index = pictures.firstIndex(of: picture){
+            return AnyView(AddedImageView(image: picture.picture, action:{
+                onAddedImageClick(index)
+            }))
+        } else {
+            return AnyView(AddImageView(action: onAddImageClick))
+        }
     }
 }
 
