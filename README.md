@@ -1,4 +1,4 @@
-# tinder-clone-ios-public
+# TinderCloneSwiftUI
 Tinder clone application written using SwiftUI, Firebase, Swift Package Manager and iOS 15 technologies with an MVVM architectural pattern. The app contains localizations for both English and Spanish languages and support for dark mode. Below a more detailed description of the app features.
 
 ## Login screen
