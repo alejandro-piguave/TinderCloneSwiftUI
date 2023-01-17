@@ -5,10 +5,8 @@ Tinder clone application written using SwiftUI, Firebase, Swift Package Manager 
 
 <p float="left">
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/login_screen.png" width="250">
-  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_1.PNG" width="250" />
-  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_2.PNG" width="250" /> 
-  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_1.PNG" width="250" />
-  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_2.PNG" width="250" />
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen.gif" width="250" />
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_mode.gif" width="250" /> 
 </p>
 
 Only Google Sign in is allowed. Depending on if the user already has an account, either of these two actions should be performed:
