@@ -58,7 +58,9 @@ class LoginViewModel: NSObject, ObservableObject {
             //Successfully logged in
             
         }catch{
-            self.loginError = LoginError(message: error.localizedDescription)
+            DispatchQueue.main.async {
+                self.loginError = LoginError(message: error.localizedDescription)
+            }
             return
         }
     }
@@ -74,6 +76,7 @@ class LoginViewModel: NSObject, ObservableObject {
             GIDSignIn.sharedInstance.signIn(with: configuration, presenting: controller) { user, error in
                 if let error = error {
                     continuation.resume(throwing: error)
+                    return
                 }
                 continuation.resume(returning: user!)
             }
