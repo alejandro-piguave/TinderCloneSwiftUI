@@ -1,30 +1,29 @@
 # TinderCloneSwiftUI
 Tinder clone application written using SwiftUI, Firebase, Swift Package Manager and iOS 15 technologies with an MVVM architectural pattern. The app contains localizations for both English and Spanish languages and support for dark mode. Below a more detailed description of the app features.
 
-## Login screen
-Only Google Sign in is allowed. Depending on if the user already has an account, either of these two actions will be performed:
-* Click on the "Sign in with Google" button and enter valid credentials. If the login is sucessful and the account exists, the user will be redirected to the home page, otherwise, an error dialog will apear.
-* Click on the "Create a new account button" to navigate to the "Create Profile" screen and fill in the required information.
-
-<img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/login_screen.png" width="250">
-
-## Create Profile screen
-In this screen the user will be required to complete the following actions:
-* Add at least two profile pictures. This can be obtained through either the phone's photo library or the device camera. The necessary permissions are requested accordingly.
-* The user bio is optional, it can contain up to 500 characters. The remaining characters will be shown to the user as he types in the text editor.
-* The user name
-* The user's birthday. This will be used to calculate his age accordingly.
-* The user's gender (to simplify profile fetching and the matching algorithm only two options are available although more options could be added).
-* The user interests: his own gender, the opposite, or both.
-
-Once the information has been filled in and the user clicks on the "Sign Up with Google button", if the user didn't exist before and the creation of the account was successful, the user will be redirected to the home page, otherwise an error dialog will appear.
+## Login and Create Profile
 
 <p float="left">
+  <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/login_screen.png" width="250">
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_1.PNG" width="250" />
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_2.PNG" width="250" /> 
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_1.PNG" width="250" />
   <img src="https://github.com/alejandro-piguave/tinder-clone-ios-public/blob/main/screenshots/create_profile_screen_dark_2.PNG" width="250" />
 </p>
+
+Only Google Sign in is allowed. Depending on if the user already has an account, either of these two actions should be performed:
+* **If the user has an account:** Click on the "Sign in with Google" button and enter valid credentials. If the login is sucessful and the account exists, the user will be redirected to the home page, otherwise, an error dialog will apear.
+* **If the user doesn't has an account:** Click on the "Create a new account button" to navigate to the "Create Profile" screen.
+
+In the Create Profile screen the user will be required to complete the following actions:
+* Add at least two profile pictures. These can be obtained through either the phone's photo library or the device camera. The necessary permissions are requested accordingly.
+* The user bio is optional, it can contain up to 500 characters. The remaining characters will be shown to the user as he types in the text editor.
+* The user's name.
+* The user's birthday. This will be used to calculate their age accordingly.
+* The user's gender (to simplify profile fetching only two options are available).
+* The user interests: their own gender, the opposite, or both.
+
+Once the information has been filled in and the user clicks on the "Sign Up with Google button", if the user didn't exist before and the creation of the account was successful, the user will be redirected to the home page, otherwise an error dialog will appear.
 
 
 ## Home screen
