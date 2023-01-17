@@ -17,11 +17,8 @@
 		4F089971278094E600A3BE95 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 4F089970278094E600A3BE95 /* FirebaseStorage */; };
 		4F089974278095B300A3BE95 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 4F089973278095B300A3BE95 /* GoogleSignIn */; };
 		4F0899852781007900A3BE95 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4F0899842781007900A3BE95 /* GoogleService-Info.plist */; };
-		4F0E0A892976FAB700E2AA51 /* create_profile_screen_dark_mode.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F0E0A872976FAB700E2AA51 /* create_profile_screen_dark_mode.gif */; };
-		4F0E0A8A2976FAB700E2AA51 /* create_profile_screen.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F0E0A882976FAB700E2AA51 /* create_profile_screen.gif */; };
 		4F31455427837E5C008D5D4A /* FirebaseFirestoreSwift-Beta in Frameworks */ = {isa = PBXBuildFile; productRef = 4F31455327837E5C008D5D4A /* FirebaseFirestoreSwift-Beta */; };
 		4F5129802976E64E008EF944 /* messages_screen.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129702976E64E008EF944 /* messages_screen.jpeg */; };
-		4F5129812976E64E008EF944 /* swiping_example.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129712976E64E008EF944 /* swiping_example.gif */; };
 		4F5129822976E64E008EF944 /* create_profile_screen_dark_1.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129722976E64E008EF944 /* create_profile_screen_dark_1.PNG */; };
 		4F5129832976E64E008EF944 /* chat_screen_dark.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129732976E64E008EF944 /* chat_screen_dark.PNG */; };
 		4F5129842976E64E008EF944 /* create_profile_screen_dark_2.PNG in Resources */ = {isa = PBXBuildFile; fileRef = 4F5129742976E64E008EF944 /* create_profile_screen_dark_2.PNG */; };
@@ -85,6 +82,9 @@
 		4F5B5E352926AA5E000E89B0 /* CreateProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B5E0B2926AA5E000E89B0 /* CreateProfileViewModel.swift */; };
 		4F5B5E362926AA5E000E89B0 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B5E0D2926AA5E000E89B0 /* LoginViewModel.swift */; };
 		4F5B5E372926AA5E000E89B0 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5B5E0E2926AA5E000E89B0 /* LoginView.swift */; };
+		4F6E2B1129770C8900F79B69 /* create_profile_dark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E2B0E29770C8900F79B69 /* create_profile_dark.gif */; };
+		4F6E2B1229770C8900F79B69 /* create_profile.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E2B0F29770C8900F79B69 /* create_profile.gif */; };
+		4F6E2B1529770D8B00F79B69 /* swiping_example.gif in Resources */ = {isa = PBXBuildFile; fileRef = 4F6E2B1429770D8B00F79B69 /* swiping_example.gif */; };
 		4FBBA11B27977419003BC15D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4FBBA11D27977419003BC15D /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
@@ -116,10 +116,7 @@
 		4F0899562780939B00A3BE95 /* tinder_cloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tinder_cloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		4F0899752780963500A3BE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		4F0899842781007900A3BE95 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		4F0E0A872976FAB700E2AA51 /* create_profile_screen_dark_mode.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = create_profile_screen_dark_mode.gif; sourceTree = "<group>"; };
-		4F0E0A882976FAB700E2AA51 /* create_profile_screen.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = create_profile_screen.gif; sourceTree = "<group>"; };
 		4F5129702976E64E008EF944 /* messages_screen.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = messages_screen.jpeg; sourceTree = "<group>"; };
-		4F5129712976E64E008EF944 /* swiping_example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiping_example.gif; sourceTree = "<group>"; };
 		4F5129722976E64E008EF944 /* create_profile_screen_dark_1.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_profile_screen_dark_1.PNG; sourceTree = "<group>"; };
 		4F5129732976E64E008EF944 /* chat_screen_dark.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat_screen_dark.PNG; sourceTree = "<group>"; };
 		4F5129742976E64E008EF944 /* create_profile_screen_dark_2.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = create_profile_screen_dark_2.PNG; sourceTree = "<group>"; };
@@ -183,6 +180,9 @@
 		4F5B5E0B2926AA5E000E89B0 /* CreateProfileViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateProfileViewModel.swift; sourceTree = "<group>"; };
 		4F5B5E0D2926AA5E000E89B0 /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		4F5B5E0E2926AA5E000E89B0 /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4F6E2B0E29770C8900F79B69 /* create_profile_dark.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = create_profile_dark.gif; sourceTree = "<group>"; };
+		4F6E2B0F29770C8900F79B69 /* create_profile.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = create_profile.gif; sourceTree = "<group>"; };
+		4F6E2B1429770D8B00F79B69 /* swiping_example.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = swiping_example.gif; sourceTree = "<group>"; };
 		4FBBA11C27977419003BC15D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4FBBA11E27977445003BC15D /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -288,10 +288,10 @@
 		4F51296F2976E64E008EF944 /* screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				4F0E0A872976FAB700E2AA51 /* create_profile_screen_dark_mode.gif */,
-				4F0E0A882976FAB700E2AA51 /* create_profile_screen.gif */,
+				4F6E2B1429770D8B00F79B69 /* swiping_example.gif */,
+				4F6E2B0E29770C8900F79B69 /* create_profile_dark.gif */,
+				4F6E2B0F29770C8900F79B69 /* create_profile.gif */,
 				4F5129702976E64E008EF944 /* messages_screen.jpeg */,
-				4F5129712976E64E008EF944 /* swiping_example.gif */,
 				4F5129722976E64E008EF944 /* create_profile_screen_dark_1.PNG */,
 				4F5129732976E64E008EF944 /* chat_screen_dark.PNG */,
 				4F5129742976E64E008EF944 /* create_profile_screen_dark_2.PNG */,
@@ -589,18 +589,18 @@
 				4F51298F2976E64E008EF944 /* edit_profile_screen_1.PNG in Resources */,
 				4F51298B2976E64E008EF944 /* create_profile_screen_1.PNG in Resources */,
 				4F0899412780939B00A3BE95 /* Preview Assets.xcassets in Resources */,
-				4F5129812976E64E008EF944 /* swiping_example.gif in Resources */,
 				4FBBA11B27977419003BC15D /* Localizable.strings in Resources */,
-				4F0E0A8A2976FAB700E2AA51 /* create_profile_screen.gif in Resources */,
+				4F6E2B1129770C8900F79B69 /* create_profile_dark.gif in Resources */,
 				4F51298D2976E64E008EF944 /* edit_profile_screen_dark_1.PNG in Resources */,
+				4F6E2B1529770D8B00F79B69 /* swiping_example.gif in Resources */,
 				4F51298E2976E64E008EF944 /* edit_profile_screen_2.PNG in Resources */,
+				4F6E2B1229770C8900F79B69 /* create_profile.gif in Resources */,
 				4F5129802976E64E008EF944 /* messages_screen.jpeg in Resources */,
 				4F5129822976E64E008EF944 /* create_profile_screen_dark_1.PNG in Resources */,
 				4F08993E2780939B00A3BE95 /* Assets.xcassets in Resources */,
 				4F51298C2976E64E008EF944 /* chat_screen.PNG in Resources */,
 				4F5129852976E64E008EF944 /* messages_screen_dark.PNG in Resources */,
 				4F5129862976E64E008EF944 /* home_screen_dark.PNG in Resources */,
-				4F0E0A892976FAB700E2AA51 /* create_profile_screen_dark_mode.gif in Resources */,
 				4F0899852781007900A3BE95 /* GoogleService-Info.plist in Resources */,
 				4F5129892976E64E008EF944 /* edit_profile_screen_dark_2.PNG in Resources */,
 				4F5129882976E64E008EF944 /* create_profile_screen_2.PNG in Resources */,
