@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct UserModel {
+struct ProfileCardModel {
     let userId: String
     let name: String
     let age: Int

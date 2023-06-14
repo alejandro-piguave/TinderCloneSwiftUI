@@ -17,13 +17,12 @@ import SwiftUI
 struct StorageError : Error{
     let message: String
 }
-class StorageRepository{
+class StorageRemoteDataSource {
     private static let IMG_MAX_SIZE: Int64 = 10 * 1024 * 1024
-    static let shared = StorageRepository()
+    static let shared = StorageRemoteDataSource()
     private let storage = Storage.storage().reference()
     private var userId: String? { Auth.auth().currentUser?.uid }
     private init(){}
-    
     
     
     func uploadUserPictures(_ pics: [UIImage]) async throws -> [String] {
@@ -131,7 +130,7 @@ class StorageRepository{
     private func getPictureFromUser(userId: String, fileName: String) async throws -> UIImage{
         try await withCheckedThrowingContinuation{ continuation in
             let pictureRef = storage.child("users").child(userId).child(fileName)
-            pictureRef.getData(maxSize: StorageRepository.IMG_MAX_SIZE, completion: { data, error in
+            pictureRef.getData(maxSize: StorageRemoteDataSource.IMG_MAX_SIZE, completion: { data, error in
                 if let error = error{
                     continuation.resume(throwing: error)
                     return

@@ -14,7 +14,7 @@ struct CreateProfileView: View {
     @State private var datePickerSelection: Date = Date()
     @State private var genderSelection: String = ""
     @State private var orientationSelection: Orientation? = nil
-    @State private var pictures: [ProfilePicture] = []
+    @State private var pictures: [PictureModel] = []
     @State private var image = UIImage()
     @State private var selectedContentType: UIImagePickerController.SourceType = .photoLibrary
 
@@ -94,55 +94,55 @@ struct CreateProfileView: View {
                     Text("Create account with Google")
                 }
             }
-                    .frame(maxWidth: .infinity)
-                    .padding()
-                    .disabled(isInformationValid())
-
+            .frame(maxWidth: .infinity)
+            .padding()
+            .disabled(isInformationValid())
+            
         }
-                .background(AppColor.lighterGray)
-                .navigationBarTitle("create-profile")
-                .showLoading(createProfileViewModel.isLoading)
-                .onDrop(of: [UTType.text], delegate: DropOutsideDelegate(droppedOutside: $droppedOutside))
-                .onChange(of: createProfileViewModel.signUpError, perform: { _ in
-                    showError = true
-                })
-                .onChange(of: image, perform: { newValue in
-                    pictures.append(ProfilePicture(filename: nil, picture: newValue))
-                })
-                .onChange(of: createProfileViewModel.isSignUpComplete) { newValue in
-                    if newValue {
-                        self.presentationMode.wrappedValue.dismiss()
-                        contentViewModel.updateAuthState()
-                    }
+        .background(AppColor.lighterGray)
+        .navigationBarTitle("create-profile")
+        .showLoading(createProfileViewModel.isLoading)
+        .onDrop(of: [UTType.text], delegate: DropOutsideDelegate(droppedOutside: $droppedOutside))
+        .onChange(of: createProfileViewModel.signUpError, perform: { _ in
+            showError = true
+        })
+        .onChange(of: image, perform: { newValue in
+            pictures.append(PictureModel.newPicture(newValue))
+        })
+        .onChange(of: createProfileViewModel.isSignUpComplete) { newValue in
+            if newValue {
+                self.presentationMode.wrappedValue.dismiss()
+                contentViewModel.updateAuthState()
+            }
+        }
+        .sheet(isPresented: $showContentTypeSheet) {
+            ContentTypeView(onContentTypeSelected: { contentType in
+                switch contentType {
+                case .permissionDenied:
+                    showPermissionDenied.toggle()
+                    return
+                case .contentType(let sourceType):
+                    self.selectedContentType = sourceType
+                    showImagePicker.toggle()
+                    return
                 }
-                .sheet(isPresented: $showContentTypeSheet) {
-                    ContentTypeView(onContentTypeSelected: { contentType in
-                        switch contentType {
-                        case .permissionDenied:
-                            showPermissionDenied.toggle()
-                            return
-                        case .contentType(let sourceType):
-                            self.selectedContentType = sourceType
-                            showImagePicker.toggle()
-                            return
-                        }
-                    })
-                }
-                .sheet(isPresented: $showImagePicker) {
-                    ImagePicker(sourceType: selectedContentType, selectedImage: $image)
-                }
-                .alert("camera-permission-denied", isPresented: $showPermissionDenied, actions: {}, message: { Text("user-must-grant-camera-permission") })
+            })
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(sourceType: selectedContentType, selectedImage: $image)
+        }
+        .alert("camera-permission-denied", isPresented: $showPermissionDenied, actions: {}, message: { Text("user-must-grant-camera-permission") })
 
-                .alert("Error",
-                        isPresented: $showError,
-                        actions: {},
-                        message: {
-                            Text(createProfileViewModel.signUpError ?? "")
-                        })
-                .alert("Remove this picture?", isPresented: $showRemoveConfirmation, actions: {
-                    Button("Yes", action: removePicture)
-                    Button("Cancel", role: .cancel, action: {})
+        .alert("Error",
+                isPresented: $showError,
+                actions: {},
+                message: {
+                    Text(createProfileViewModel.signUpError ?? "")
                 })
+        .alert("Remove this picture?", isPresented: $showRemoveConfirmation, actions: {
+            Button("Yes", action: removePicture)
+            Button("Cancel", role: .cancel, action: {})
+        })
     }
 
     private func removePicture() {
@@ -156,7 +156,7 @@ struct CreateProfileView: View {
     }
 
     private func submitInformation() {
-        let profileData = ProfileData(name: userName, birthDate: datePickerSelection, bio: userBio, isMale: Constants.genderOptions.firstIndex(of: genderSelection) == 0, orientation: .both,
+        let profileData = CreateProfileModel(name: userName, birthDate: datePickerSelection, bio: userBio, isMale: Constants.genderOptions.firstIndex(of: genderSelection) == 0, orientation: .both,
                 pictures: pictures.map({ $0.picture }))
         createProfileViewModel.signUp(profileData: profileData, controller: getRootViewController())
     }

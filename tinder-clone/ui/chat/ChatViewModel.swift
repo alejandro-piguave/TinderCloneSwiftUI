@@ -9,7 +9,7 @@ import Foundation
 
 class ChatViewModel: NSObject, ObservableObject {
 
-    private let firestoreRepository: FirestoreRepository = FirestoreRepository.shared
+    private let messageRepository = MessageRepository.shared
     
     @Published private (set) var messageList: [MessageModel] = []
     
@@ -18,14 +18,18 @@ class ChatViewModel: NSObject, ObservableObject {
     
     
     func sendMessage(matchId: String, message: String){
-        firestoreRepository.sendMessage(matchId: matchId, message: message)
+        do {
+            try messageRepository.sendMessage(matchId: matchId, message: message)
+        } catch {
+            //Haven't thought about error handling yet
+        }
     }
     
     func listenToMessages(matchId: String){
-        firestoreRepository.listenedMatchId = matchId
+        messageRepository.setChatMatchId(matchId: matchId)
         Task{
             do{
-                for try await messageList in firestoreRepository.messagesListener{
+                for try await messageList in messageRepository.getMessageListener() {
                     DispatchQueue.main.async {
                         self.messageList = messageList
                     }
@@ -39,6 +43,6 @@ class ChatViewModel: NSObject, ObservableObject {
     }
     
     func removeListener(){
-        firestoreRepository.listenerRegistration?.remove()
+        messageRepository.removeListener()
     }
 }

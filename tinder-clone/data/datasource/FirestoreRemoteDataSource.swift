@@ -16,29 +16,34 @@ struct ParsingError: LocalizedError{
     public var errorDescription: String? { message }
 }
 
-class FirestoreRepository{
-    static let shared = FirestoreRepository()
-    private var userId: String? { Auth.auth().currentUser?.uid }
+class FirestoreRemoteDataSource {
+    static let shared = FirestoreRemoteDataSource()
     private let db = Firestore.firestore()
     private init(){}
     
+    func getUserId() throws -> String {
+        guard let userId = Auth.auth().currentUser?.uid  else {
+            throw AuthErrorModel(message: "User not signed in.")
+        }
+        return userId
+    }
     
     func createUserProfile(name: String, birthDate: Date, bio: String, isMale: Bool, orientation: Orientation, pictures: [String]) async throws{
         let firestoreUser = FirestoreUser(name: name, birthDate: birthDate, bio: bio, isMale: isMale, orientation: orientation, pictures: pictures, liked: [], passed: [])
         
-        try db.collection("users").document(userId!).setData(from: firestoreUser)
+        try db.collection("users").document(self.getUserId()).setData(from: firestoreUser)
     }
     
     //Returns true if a match was created as a result of this swipe
     func swipeUser(swipedUserId: String, hasLiked: Bool) async throws -> Bool{
-        try await db.collection("users").document(userId!).updateData([
+        try await db.collection("users").document(self.getUserId()).updateData([
             (hasLiked ? FirestoreUser.CodingKeys.liked.rawValue : FirestoreUser.CodingKeys.passed.rawValue) : FieldValue.arrayUnion([swipedUserId])
         ])
-        try await db.collection("users").document(userId!).collection(FirestoreUser.CodingKeys.liked.rawValue).document(swipedUserId).setData(["exists" : true])
+        try await db.collection("users").document(self.getUserId()).collection(FirestoreUser.CodingKeys.liked.rawValue).document(swipedUserId).setData(["exists" : true])
         
         if try await hasUserLikedBack(swipedUserId: swipedUserId){
-            try await self.db.collection("matches").document(self.getMatchId(userId1: swipedUserId, userId2: self.userId!))
-                    .setData(["usersMatched": [swipedUserId, self.userId!], "timestamp": FieldValue.serverTimestamp()])
+            try await self.db.collection("matches").document(self.getMatchId(userId1: swipedUserId, userId2: self.getUserId()))
+                    .setData(["usersMatched": [swipedUserId, self.getUserId()], "timestamp": FieldValue.serverTimestamp()])
             return true
         }
         
@@ -49,14 +54,13 @@ class FirestoreRepository{
     private func getMatchId(userId1: String, userId2: String) -> String {userId1 > userId2 ? userId1 + userId2 : userId2 + userId1}
 
     private func hasUserLikedBack(swipedUserId: String) async throws -> Bool {
-        let result = try await db.collection("users").document(swipedUserId).collection("liked").document(userId!).getDocument()
+        let result = try await db.collection("users").document(swipedUserId).collection("liked").document(try self.getUserId()).getDocument()
         return result.exists
     }
     
     //Obtains the profile of a user given its id. If left blank, it retrieves the profile of the current logged user.
-    func getUserProfile(fetchedUserId: String? = nil) async throws -> FirestoreUser{
-        let usedId: String = fetchedUserId ?? userId!
-        let result  = try await db.collection("users").document(usedId).getDocument()
+    func getUserProfile(userId: String) async throws -> FirestoreUser{
+        let result  = try await db.collection("users").document(userId).getDocument()
 
         guard let user = try result.data(as: FirestoreUser.self) else{
             throw ParsingError(message: "Could not parse the user profile object.")
@@ -67,13 +71,14 @@ class FirestoreRepository{
     
     
     func getCompatibleUsers(isUserMale: Bool, userOrientation: Orientation, excludedUsers: [String]) async throws -> [FirestoreUser]{
+        let userId = try self.getUserId()
         var searchQuery = db.collection("users").whereField(FirestoreUser.CodingKeys.orientation.rawValue, isNotEqualTo: isUserMale ? Orientation.women.rawValue : Orientation.men.rawValue)
         if userOrientation != .both{
             searchQuery = searchQuery.whereField(FirestoreUser.CodingKeys.isMale.rawValue, isEqualTo: userOrientation == .men)
         }
 
         let result = try await searchQuery.getDocuments()
-        let filteredDocumentList = result.documents.filter{ $0.documentID != self.userId && !excludedUsers.contains($0.documentID)}
+        let filteredDocumentList = result.documents.filter{ $0.documentID != userId && !excludedUsers.contains($0.documentID)}
         if filteredDocumentList.isEmpty {
             return []
         }
@@ -93,18 +98,19 @@ class FirestoreRepository{
     //Update profile
     
     func updateUserProfile(modified profileFields: [String: Any]) async throws {
-        let ref = db.collection("users").document(userId!)
+        let ref = db.collection("users").document(try self.getUserId())
         try await ref.updateData(profileFields)
     }
     
     //Matches
     
     func getMatchedUsers() async throws -> [MatchProfile] {
-        let result = try await db.collection("matches").whereField("usersMatched", arrayContains: userId!).getDocuments()
+        let userId = try self.getUserId()
+        let result = try await db.collection("matches").whereField("usersMatched", arrayContains: userId).getDocuments()
 
         let matches: [Match] = try result.documents.map({ document in
             let match: FirestoreMatch = try document.data(as: FirestoreMatch.self)!
-            return Match(id: match.id!, userId: match.usersMatched.filter{$0 != self.userId!}.first!, timestamp: match.timestamp)
+            return Match(id: match.id!, userId: match.usersMatched.filter{$0 != userId}.first!, timestamp: match.timestamp)
         })
         
         let matchedUsers = try await getMatchedUsers(matches: matches)
@@ -115,7 +121,7 @@ class FirestoreRepository{
         try await withThrowingTaskGroup(of: (FirestoreUser, Match).self, body: { group in
             for match in matches {
                 group.addTask {
-                    let user = try await self.getUserProfile(fetchedUserId: match.userId)
+                    let user = try await self.getUserProfile(userId: match.userId)
                     return (user, match)
                 }
             }
@@ -132,11 +138,11 @@ class FirestoreRepository{
     
     //Messages
     
-    func sendMessage(matchId: String, message: String) {
+    func sendMessage(matchId: String, message: String) throws{
         db.collection("matches").document(matchId).collection("messages")
             .addDocument(data:
                             ["message" : message,
-                             "senderId" : userId!,
+                             "senderId" : try self.getUserId(),
                              "timestamp" : FieldValue.serverTimestamp()])
     }
     
@@ -147,6 +153,13 @@ class FirestoreRepository{
         AsyncThrowingStream<[MessageModel], Error> { continuation in
             listenerRegistration = db.collection("matches").document(listenedMatchId).collection("messages").order(by: "timestamp", descending: false).addSnapshotListener({ querySnapshot, error in
                 
+                var userId: String = ""
+                do {
+                    userId = try self.getUserId()
+                } catch{
+                    continuation.finish(throwing: error)
+                }
+                
                 guard let documents = querySnapshot?.documents, error == nil else {
                     continuation.finish(throwing: error)
                     return
@@ -154,7 +167,7 @@ class FirestoreRepository{
                 
                 let messages: [MessageModel] = documents.compactMap{ document in
                     if let firestoreMessage = try? document.data(as: FirestoreMessage.self){
-                        return MessageModel.from(id: document.documentID, firestoreMessage, currentUserId: self.userId!)
+                        return MessageModel.from(id: document.documentID, firestoreMessage, currentUserId: userId)
                     } else {
                         return nil
                     }

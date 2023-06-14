@@ -13,7 +13,7 @@ protocol Draggable{
 
 struct GridCell: Hashable, Identifiable, Draggable{
     private (set) var id: UUID = UUID()
-    var picture: ProfilePicture? = nil
+    var picture: PictureModel? = nil
     var isDraggable: Bool {
         picture != nil
     }
@@ -25,7 +25,7 @@ struct PictureGridView: View {
         GridItem(.flexible()),
         GridItem(.flexible()),
     ]
-    @Binding var pictures: [ProfilePicture]
+    @Binding var pictures: [PictureModel]
     @Binding var picturesChanged: Bool
     @Binding var droppedOutside: Bool
     @State var cells: [GridCell] = (0...8).map{  _ in GridCell() }
@@ -33,7 +33,7 @@ struct PictureGridView: View {
     let onAddedImageClick: (Int) -> ()
     let onAddImageClick: () -> ()
     
-    init( pictures: Binding< [ProfilePicture] >,  picturesChanged: Binding<Bool> = .constant(false), droppedOutside: Binding<Bool> = .constant(false), onAddedImageClick: @escaping (Int) -> () = {value in}, onAddImageClick: @escaping () -> () = {}){
+    init( pictures: Binding< [PictureModel] >,  picturesChanged: Binding<Bool> = .constant(false), droppedOutside: Binding<Bool> = .constant(false), onAddedImageClick: @escaping (Int) -> () = {value in}, onAddImageClick: @escaping () -> () = {}){
         self._pictures = pictures
         self._picturesChanged = picturesChanged
         self._droppedOutside = droppedOutside

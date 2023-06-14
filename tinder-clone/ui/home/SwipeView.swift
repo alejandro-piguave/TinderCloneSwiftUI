@@ -12,10 +12,10 @@ enum SwipeAction{
 }
 
 struct SwipeView: View {
-    @Binding var profiles: [UserModel]
+    @Binding var profiles: [ProfileCardModel]
     @State var swipeAction: SwipeAction = .doNothing
     //Bool: true if it was a like (swipe to the right
-    var onSwiped: (UserModel, Bool) -> ()
+    var onSwiped: (ProfileCardModel, Bool) -> ()
     
     var body: some View {
         VStack{
@@ -24,7 +24,7 @@ struct SwipeView: View {
                 ZStack{
                     Text("no-more-profiles").font(.title3).fontWeight(.medium).foregroundColor(Color(UIColor.systemGray)).multilineTextAlignment(.center)
                     ForEach(profiles.indices, id: \.self){ index  in
-                        let model: UserModel = profiles[index]
+                        let model: ProfileCardModel = profiles[index]
                         
                         if(index == profiles.count - 1){
                             SwipeableCardView(model: model, swipeAction: $swipeAction, onSwiped: performSwipe)
@@ -45,7 +45,7 @@ struct SwipeView: View {
         }
     }
     
-    private func performSwipe(userProfile: UserModel, hasLiked: Bool){
+    private func performSwipe(userProfile: ProfileCardModel, hasLiked: Bool){
         removeTopItem()
         onSwiped(userProfile, hasLiked)
     }
@@ -64,11 +64,11 @@ struct SwipeableCardView: View {
     private let like = "LIKE"
     private let screenWidthLimit = UIScreen.main.bounds.width * 0.5
     
-    let model: UserModel
+    let model: ProfileCardModel
     @State private var dragOffset = CGSize.zero
     @Binding var swipeAction: SwipeAction
     
-    var onSwiped: (UserModel, Bool) -> ()
+    var onSwiped: (ProfileCardModel, Bool) -> ()
     
     var body: some View {
         SwipeCardView(model: model)
@@ -179,7 +179,7 @@ struct SwipeableCardView: View {
 
 //Card design
 struct SwipeCardView: View {
-    let model: UserModel
+    let model: ProfileCardModel
     
     @State private var currentImageIndex: Int = 0
     
@@ -245,9 +245,9 @@ struct SwipeCardView: View {
 
 
 struct SwipeView_Previews: PreviewProvider {
-    @State static private var profiles: [UserModel] = [
-        UserModel(userId: "defdwsfewfes", name: "Michael Jackson", age: 50, pictures: [UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!]),
-        UserModel(userId: "defdwsfewfes", name: "Michael Jackson", age: 50, pictures: [UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!])
+    @State static private var profiles: [ProfileCardModel] = [
+        ProfileCardModel(userId: "defdwsfewfes", name: "Michael Jackson", age: 50, pictures: [UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!]),
+        ProfileCardModel(userId: "defdwsfewfes", name: "Michael Jackson", age: 50, pictures: [UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!,UIImage(named: "elon_musk")!,UIImage(named: "jeff_bezos")!])
     ]
     static var previews: some View {
         SwipeView(profiles: $profiles, onSwiped: {_,_ in})

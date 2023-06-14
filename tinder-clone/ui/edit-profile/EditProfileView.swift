@@ -36,7 +36,7 @@ struct EditProfileView: View {
 
     @State private var confirmRemoveImageIndex: Int = 0
     @State private var selectedContentType: UIImagePickerController.SourceType = .photoLibrary
-    @State private var pictures: [ProfilePicture] = []
+    @State private var pictures: [PictureModel] = []
     @State private var image = UIImage()
     @State private var droppedOutside: Bool = false
     @State private var picturesModified: Bool = false
@@ -140,7 +140,7 @@ struct EditProfileView: View {
                     }
                 })
                 .onChange(of: image, perform: { newValue in
-                    pictures.append(ProfilePicture(filename: nil, picture: newValue))
+                    pictures.append(PictureModel.newPicture(newValue))
                     picturesModified = true
                 })
                 .alert("sign-out-confirmation", isPresented: $showSignOutConfirmation, actions: {
